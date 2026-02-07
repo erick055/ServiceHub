@@ -87,7 +87,7 @@ $history_result = $conn->query($history_sql);
         <div class="user-info">
             <p>Logged in as:</p>
             <h3><?php echo htmlspecialchars($user_name); ?></h3>
-            <a href="logout.php" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Sign Out</a>
+            <a href="login.php" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Sign Out</a>
         </div>
     </aside>
 

@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+// Check if user is logged in AND is an admin
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    header("Location: user-pages/login.php"); // Send them back to login
+    exit();
+}
 include 'db_connect.php';
 
 // --- 1. Fetch KPI Data ---
