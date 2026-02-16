@@ -3,7 +3,7 @@ session_start();
 
 // Check if user is logged in AND is an admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: user-pages/login.php"); // Send them back to login
+    header("Location: login.php"); // Send them back to login
     exit();
 }
 include 'db_connect.php';
@@ -64,8 +64,8 @@ $recent_result = $conn->query($recent_query);
     <aside class="sidebar">
         <div class="brand"><i class="fa-solid fa-wrench"></i><h1>ServiceHub</h1></div>
         <ul class="nav-menu">
-            <li><a href="dashboard.php" class="nav-link active"><i class="fa-solid fa-chart-simple"></i> Dashboard</a></li>
-            <li><a href="appointments.php" class="nav-link"><i class="fa-regular fa-calendar-check"></i> Appointments</a></li>
+            <li><a href="admin-dashboard.php" class="nav-link active"><i class="fa-solid fa-chart-simple"></i> Dashboard</a></li>
+            <li><a href="admin-appointments.php" class="nav-link"><i class="fa-regular fa-calendar-check"></i> Appointments</a></li>
         </ul>
     </aside>
 
