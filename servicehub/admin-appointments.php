@@ -43,8 +43,8 @@ $result = $conn->query($sql);
             <i class="fa-solid fa-wrench" style="color: var(--primary-orange);"></i> ServiceHub
         </div>
         <ul class="nav-menu">
-            <li><a href="dashboard.php" class="nav-link"><i class="fa-solid fa-chart-simple"></i> Dashboard</a></li>
-            <li><a href="appointments.php" class="nav-link active"><i class="fa-regular fa-calendar-check"></i> Appointments</a></li>
+            <li><a href="admin-dashboard.php" class="nav-link"><i class="fa-solid fa-chart-simple"></i> Dashboard</a></li>
+            <li><a href="admin-appointments.php" class="nav-link active"><i class="fa-regular fa-calendar-check"></i> Appointments</a></li>
         </ul>
     </aside>
 
@@ -90,5 +90,26 @@ $result = $conn->query($sql);
             </div>
         </section>
     </main>
+    <div class="car-container">
+    <h3>Mark Vehicle Damage</h3>
+    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="50" y="40" width="300" height="120" rx="40" fill="none" stroke="#64748b" stroke-width="2"/>
+        
+        <path id="hood" class="car-part" d="M100 50 Q200 40 300 50 L300 80 Q200 70 100 80 Z" />
+        <text x="200" y="70" class="part-label">HOOD</text>
+
+        <path id="front_bumper" class="car-part" d="M50 70 Q50 40 100 40 L100 160 Q50 160 50 130 Z" />
+        <text x="75" y="105" class="part-label" transform="rotate(-90 75,105)">FRONT</text>
+
+        <path id="roof" class="car-part" d="M150 85 h100 v30 h-100 z" />
+        <text x="200" y="105" class="part-label">ROOF</text>
+        
+        <path id="rear_bumper" class="car-part" d="M350 70 Q350 40 300 40 L300 160 Q350 160 350 130 Z" />
+        <text x="325" y="105" class="part-label" transform="rotate(90 325,105)">REAR</text>
+    </svg>
+    
+    <input type="hidden" name="damage_data" id="damage_data">
+    <button type="button" onclick="saveDamage()" class="btn-submit">Update Damage Report</button>
+</div>
 </body>
 </html>
